@@ -1,4 +1,4 @@
-package org.example.exposed.domain.infra
+package org.example.exposed.infra
 
 import io.swagger.v3.oas.models.Components
 import io.swagger.v3.oas.models.OpenAPI

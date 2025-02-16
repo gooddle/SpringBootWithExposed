@@ -1,9 +1,9 @@
-package org.example.exposed.domain.infra.security.jwt
+package org.example.exposed.infra.security.jwt
 
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
-import org.example.exposed.domain.infra.security.UserPrincipal
+import org.example.exposed.infra.security.UserPrincipal
 import org.springframework.http.HttpHeaders
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource

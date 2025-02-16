@@ -1,6 +1,6 @@
-package org.example.exposed.domain.infra.security.jwt
+package org.example.exposed.infra.security.jwt
 
-import org.example.exposed.domain.infra.security.UserPrincipal
+import org.example.exposed.infra.security.UserPrincipal
 import org.springframework.security.authentication.AbstractAuthenticationToken
 import org.springframework.security.web.authentication.WebAuthenticationDetails
 import java.io.Serializable

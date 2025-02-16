@@ -1,4 +1,4 @@
-package org.example.exposed.domain.infra.security
+package org.example.exposed.infra.security
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import jakarta.servlet.http.HttpServletRequest
