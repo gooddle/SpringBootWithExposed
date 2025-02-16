@@ -6,6 +6,7 @@ build/
 !**/src/test/**/build/
 
 application.yml
+.gitattributes
 ### STS ###
 .apt_generated
 .classpath
