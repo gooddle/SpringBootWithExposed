@@ -32,7 +32,7 @@ class SwaggerConfig {
             )
             .info(
                 Info()
-                    .title("blog API")
+                    .title("exposed API")
                     .description("data API schema")
                     .version("1.0.0")
             )

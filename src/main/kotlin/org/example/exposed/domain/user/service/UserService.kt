@@ -20,7 +20,7 @@ class UserService(
     fun signUp(request: SignUpRequest): SignUpResponse {
 
         if (userRepository.findByEmail(request.email) != null) {
-            throw IllegalArgumentException("User already exists")
+            throw IllegalStateException("User already exists")
         }
         val user = User.new {
             username = request.username
