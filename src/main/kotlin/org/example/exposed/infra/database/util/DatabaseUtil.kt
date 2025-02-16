@@ -1,4 +1,4 @@
-package org.example.exposed.domain.infra.database.util
+package org.example.exposed.infra.database.util
 
 import org.example.exposed.domain.user.table.UserTable
 import org.jetbrains.exposed.sql.Database

@@ -1,7 +1,7 @@
-package org.example.exposed.domain.infra.database
+package org.example.exposed.infra.database
 
 import jakarta.annotation.PostConstruct
-import org.example.exposed.domain.infra.database.util.DatabaseUtil
+import org.example.exposed.infra.database.util.DatabaseUtil
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 import javax.sql.DataSource

@@ -1,4 +1,4 @@
-package org.example.exposed.domain.infra.security.jwt
+package org.example.exposed.infra.security.jwt
 
 import io.jsonwebtoken.Claims
 import io.jsonwebtoken.Jws

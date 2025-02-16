@@ -1,4 +1,4 @@
-package org.example.exposed.domain.infra.security
+package org.example.exposed.infra.security
 
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority
