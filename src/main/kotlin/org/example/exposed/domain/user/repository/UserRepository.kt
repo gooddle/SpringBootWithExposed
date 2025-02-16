@@ -9,21 +9,17 @@ import org.springframework.stereotype.Repository
 class UserRepository {
 
     fun findByEmail(email: String): User? {
-        return transaction {
-            User.find { UserTable.email eq email }.singleOrNull()
-        }
+        return User.find { UserTable.email eq email }.singleOrNull()
+
     }
 
      fun findAll(): List<User> {
-        return transaction {
-            User.all().toList()
-        }
+        return User.all().toList()
+
     }
 
     fun deleteById(id: Long) {
-        transaction {
-            User.findById(id)?.delete()
-        }
+        User.findById(id)?.delete()
     }
 }
 
