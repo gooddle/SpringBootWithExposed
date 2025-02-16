@@ -18,9 +18,7 @@ repositories {
 	mavenCentral()
 }
 
-val kotestVersion = "5.5.5" // 추가!
 
-val mockkVersion = "1.13.8" // 추가!
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
