@@ -5,11 +5,10 @@ import org.jetbrains.exposed.dao.LongEntity
 import org.jetbrains.exposed.dao.LongEntityClass
 import org.jetbrains.exposed.dao.id.EntityID
 
+class User(id: EntityID<Long>):LongEntity(id) {
+    companion object : LongEntityClass<User>(UserTable)
 
-class Users(id: EntityID<Long>):LongEntity(id) {
-    companion object : LongEntityClass<Users>(UserTable)
-
-    var name by UserTable.name
+    var username by UserTable.username
     var email by UserTable.email
     var password by UserTable.password
     var createdAt by UserTable.createdAt

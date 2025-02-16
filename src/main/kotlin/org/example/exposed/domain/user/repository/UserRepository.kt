@@ -1,6 +1,6 @@
 package org.example.exposed.domain.user.repository
 
-import org.example.exposed.domain.user.model.Users
+import org.example.exposed.domain.user.model.User
 import org.example.exposed.domain.user.table.UserTable
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.springframework.stereotype.Repository
@@ -8,27 +8,21 @@ import org.springframework.stereotype.Repository
 @Repository
 class UserRepository {
 
-    fun findByEmail(email: String): Users? {
+    fun findByEmail(email: String): User? {
         return transaction {
-            Users.find { UserTable.email eq email }.singleOrNull()
+            User.find { UserTable.email eq email }.singleOrNull()
         }
     }
 
-     fun findAll(): List<Users> {
+     fun findAll(): List<User> {
         return transaction {
-            Users.all().toList()
+            User.all().toList()
         }
     }
 
-     fun save(user: Users): Users {
-        return transaction {
-            user
-        }
-    }
-
-     fun deleteById(id: Long) {
+    fun deleteById(id: Long) {
         transaction {
-            Users.findById(id)?.delete()
+            User.findById(id)?.delete()
         }
     }
 }
