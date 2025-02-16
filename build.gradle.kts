@@ -1,8 +1,9 @@
 plugins {
-	kotlin("jvm") version "1.9.25"
-	kotlin("plugin.spring") version "1.9.25"
-	id("org.springframework.boot") version "3.4.2"
-	id("io.spring.dependency-management") version "1.1.7"
+	id("org.springframework.boot") version "3.3.1"
+	id("io.spring.dependency-management") version "1.1.5"
+	kotlin("jvm") version "1.9.24"
+	kotlin("plugin.spring") version "1.9.24"
+	kotlin("kapt") version "1.9.24"
 }
 
 group = "org.example"
@@ -38,7 +39,6 @@ dependencies {
 	implementation("org.jetbrains.exposed:exposed-dao:0.59.0")
 	implementation("org.jetbrains.exposed:exposed-jdbc:0.59.0")
 
-//	implementation("org.jetbrains.exposed:exposed-kotlin-datetime:0.59.0")
 	implementation("org.jetbrains.exposed:exposed-java-time:0.59.0")
 
 	implementation("org.jetbrains.exposed:exposed-json:0.59.0")
