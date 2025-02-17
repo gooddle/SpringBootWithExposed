@@ -7,5 +7,6 @@ object UserTable : LongIdTable("user") {
     val username = varchar("name", 255)
     val email = varchar("email", 255).uniqueIndex()
     val password = varchar("password", 255)
+    val role = varchar("roles", 255)
     val createdAt = datetime("createdAt")
 }

@@ -11,5 +11,6 @@ class User(id: EntityID<Long>):LongEntity(id) {
     var username by UserTable.username
     var email by UserTable.email
     var password by UserTable.password
+    var role by UserTable.role
     var createdAt by UserTable.createdAt
 }
