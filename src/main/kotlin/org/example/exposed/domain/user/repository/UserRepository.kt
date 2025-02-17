@@ -17,10 +17,6 @@ class UserRepository {
         return User.all().toList()
 
     }
-
-    fun deleteById(id: Long) {
-        User.findById(id)?.delete()
-    }
 }
 
 
