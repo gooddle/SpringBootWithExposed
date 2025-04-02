@@ -11,4 +11,5 @@ object CommentTable: LongIdTable("comment") {
     val title = varchar("title", 255)
     val content = varchar("content", 255)
     val createdAt = datetime("created")
+    val modifiedAt = datetime("modified").nullable()
 }
