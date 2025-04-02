@@ -1,5 +1,6 @@
 package org.example.exposed.infra.database.util
 
+import org.example.exposed.domain.comment.table.CommentTable
 import org.example.exposed.domain.feed.table.FeedTable
 import org.example.exposed.domain.user.table.UserTable
 import org.jetbrains.exposed.sql.Database
@@ -22,6 +23,7 @@ class DatabaseUtil(
         transaction {
             SchemaUtils.create(UserTable)  // UserTable 생성
             SchemaUtils.create(FeedTable)
+            SchemaUtils.create(CommentTable)
         }
     }
 }

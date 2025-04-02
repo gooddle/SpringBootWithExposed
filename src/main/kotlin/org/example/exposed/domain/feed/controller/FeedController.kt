@@ -2,6 +2,7 @@ package org.example.exposed.domain.feed.controller
 
 import org.example.exposed.domain.feed.dto.CreateFeedRequest
 import org.example.exposed.domain.feed.dto.FeedResponse
+import org.example.exposed.domain.feed.dto.ListFeedResponse
 import org.example.exposed.domain.feed.dto.UpdateFeedRequest
 import org.example.exposed.domain.feed.service.FeedService
 import org.example.exposed.infra.security.UserPrincipal
@@ -31,8 +32,9 @@ class FeedController(
     fun updateFeed(
         @PathVariable id: Long,
         @RequestBody request: UpdateFeedRequest,
+        @AuthenticationPrincipal userPrincipal: UserPrincipal
     ): ResponseEntity<FeedResponse> {
-        return ResponseEntity.status(HttpStatus.OK).body(feedService.updateFeed(id, request))
+        return ResponseEntity.status(HttpStatus.OK).body(feedService.updateFeed(id, request, userPrincipal.id))
     }
 
     @GetMapping("feed/{id}")
@@ -40,5 +42,10 @@ class FeedController(
         @PathVariable id: Long,
     ): ResponseEntity<FeedResponse> {
         return ResponseEntity.status(HttpStatus.OK).body(feedService.getFeedById(id))
+    }
+
+    @GetMapping("feed")
+    fun getFeed() : ResponseEntity<List<ListFeedResponse>> {
+        return ResponseEntity.status(HttpStatus.OK).body(feedService.getFeed())
     }
 }

@@ -1,5 +1,7 @@
 package org.example.exposed.domain.feed.model
 
+import org.example.exposed.domain.comment.model.Comment
+import org.example.exposed.domain.comment.table.CommentTable
 import org.example.exposed.domain.feed.table.FeedTable
 import org.example.exposed.domain.user.model.User
 import org.jetbrains.exposed.dao.LongEntity
@@ -13,4 +15,11 @@ class Feed(id: EntityID<Long>) : LongEntity(id) {
     var title by FeedTable.title
     var content by FeedTable.content
     var createdAt by FeedTable.createdAt
+    var modifiedAt by FeedTable.modifiedAt
+
+    fun getComments(): List<Comment> {
+        return Comment.find { CommentTable.feedId eq this@Feed.id.value }.toList()
+    }
 }
+
+

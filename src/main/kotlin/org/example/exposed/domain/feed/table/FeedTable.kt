@@ -9,4 +9,5 @@ object FeedTable : LongIdTable("feed") {
     val title = varchar("title", 255)
     val content = text("content")
     val createdAt = datetime("created_at")
+    val modifiedAt = datetime("modified_at").nullable()
 }
