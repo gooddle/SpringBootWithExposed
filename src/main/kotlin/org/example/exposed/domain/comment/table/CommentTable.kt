@@ -6,7 +6,7 @@ import org.jetbrains.exposed.dao.id.LongIdTable
 import org.jetbrains.exposed.sql.javatime.datetime
 
 object CommentTable: LongIdTable("comment") {
-    val feedId = reference("feed", FeedTable)
+    val feedId = reference("feedId", FeedTable)
     val creatorId = reference("creator_id", UserTable)
     val title = varchar("title", 255)
     val content = varchar("content", 255)

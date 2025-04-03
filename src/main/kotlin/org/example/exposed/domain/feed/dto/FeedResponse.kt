@@ -2,6 +2,7 @@ package org.example.exposed.domain.feed.dto
 
 import org.example.exposed.domain.comment.dto.CommentResponse
 import org.example.exposed.domain.feed.model.Feed
+import org.example.exposed.domain.feed.model.getComments
 import java.time.LocalDateTime
 
 data class FeedResponse(

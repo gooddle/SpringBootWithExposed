@@ -16,10 +16,11 @@ class Feed(id: EntityID<Long>) : LongEntity(id) {
     var content by FeedTable.content
     var createdAt by FeedTable.createdAt
     var modifiedAt by FeedTable.modifiedAt
+}
 
-    fun getComments(): List<Comment> {
-        return Comment.find { CommentTable.feedId eq this@Feed.id.value }.toList()
-    }
+fun Feed.getComments(): List<Comment> {
+    println(this.id::class)
+    return Comment.find { CommentTable.feedId eq this@getComments.id }.toList()
 }
 
 
