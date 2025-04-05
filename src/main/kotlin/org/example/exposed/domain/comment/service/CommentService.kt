@@ -32,7 +32,7 @@ class CommentService(
             this.content = request.content
             this.createdAt = LocalDateTime.now()
         }
-        return CommentResponse.from(comment)
+        return CommentResponse.from(comment, user)
     }
 
     @Transactional
@@ -50,6 +50,6 @@ class CommentService(
         feedAndComment.title = request.title
         feedAndComment.content = request.content
         feedAndComment.modifiedAt = LocalDateTime.now()
-        return CommentResponse.from(feedAndComment)
+        return CommentResponse.from(feedAndComment, user)
     }
 }

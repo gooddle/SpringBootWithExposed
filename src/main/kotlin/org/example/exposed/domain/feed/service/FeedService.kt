@@ -33,7 +33,7 @@ class FeedService(
             content = request.content
             createdAt = LocalDateTime.now()
         }
-    return FeedResponse.from(feed)
+    return FeedResponse.from(feed,user)
     }
 
     @Transactional
@@ -42,14 +42,18 @@ class FeedService(
         request: UpdateFeedRequest,
         userId: Long
     ): FeedResponse {
+        transaction {
+            addLogger(StdOutSqlLogger)
+        }
         val feedEntity = feedRepository.findByIdAndUpdate(feedId){} ?: throw IllegalStateException("Feed not found")
+        val userEntity = userRepository.findById(feedEntity.creatorId.value) ?: throw IllegalStateException("User not found")
         if (feedEntity.creatorId.value != userId) {
             throw IllegalStateException("권한이 없습니다.")
         }
          feedEntity.title = request.title
          feedEntity.content = request.content
          feedEntity.modifiedAt = LocalDateTime.now()
-        return FeedResponse.from(feedEntity)
+        return FeedResponse.from(feedEntity,userEntity)
     }
 
     @Transactional
@@ -59,8 +63,8 @@ class FeedService(
         transaction {
             addLogger(StdOutSqlLogger)
         }
-        val feedEntity = feedRepository.findByIdWithCommentId(feedId) ?: throw IllegalStateException("Feed not found")
-        return FeedResponse.from(feedEntity)
+        val feedEntity = feedRepository.findByIdWithComment(feedId) ?: throw IllegalStateException("Feed not found")
+        return feedEntity
     }
 
     @Transactional

@@ -19,7 +19,6 @@ class Feed(id: EntityID<Long>) : LongEntity(id) {
 }
 
 fun Feed.getComments(): List<Comment> {
-    println(this.id::class)
     return Comment.find { CommentTable.feedId eq this@getComments.id }.toList()
 }
 
