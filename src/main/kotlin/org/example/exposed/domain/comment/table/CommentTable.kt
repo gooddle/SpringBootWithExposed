@@ -9,7 +9,7 @@ object CommentTable: LongIdTable("comment") {
     val feedId = reference("feedId", FeedTable)
     val creatorId = reference("creator_id", UserTable)
     val title = varchar("title", 255)
-    val content = varchar("content", 255)
+    val content = varchar("content", 255).nullable()
     val createdAt = datetime("created")
     val modifiedAt = datetime("modified").nullable()
 }

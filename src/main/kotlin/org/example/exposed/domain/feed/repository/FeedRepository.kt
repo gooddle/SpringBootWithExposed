@@ -35,7 +35,7 @@ class FeedRepository {
             .join(commentUserAlias, JoinType.LEFT, CommentTable.creatorId, commentUserAlias[UserTable.id])
             .select(
                 FeedTable.id,
-                FeedTable.creatorId, // ✅ 이거 꼭 필요!
+                FeedTable.creatorId,
                 FeedTable.title,
                 FeedTable.content,
                 FeedTable.createdAt,
@@ -82,7 +82,7 @@ class FeedRepository {
             CommentResponse(
                 id = commentId,
                 creatorId = commentCreatorId,
-                content = commentContent,
+                content = commentContent?: "",
                 createdAt = commentCreatedAt,
                 userName = commentUserName,
                 feedId = commentFeedId,

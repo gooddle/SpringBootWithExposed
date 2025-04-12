@@ -4,6 +4,7 @@ plugins {
 	kotlin("jvm") version "1.9.24"
 	kotlin("plugin.spring") version "1.9.24"
 	kotlin("kapt") version "1.9.22"
+	distribution
 }
 
 group = "org.example"
